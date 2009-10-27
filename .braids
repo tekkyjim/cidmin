@@ -6,3 +6,10 @@ vendor/plugins/blitz:
   type: git
   revision: 06540fc05327564a799014ccec7bec71c7527d6a
   remote: braid/vendor/plugins/blitz
+vendor/plugins/validation_reflection: 
+  squashed: true
+  url: git://github.com/redinger/validation_reflection.git
+  branch: master
+  type: git
+  revision: a2bcc8c836a45af8a7784b51b4d586ed8924f01f
+  remote: braid/vendor/plugins/validation-reflection
