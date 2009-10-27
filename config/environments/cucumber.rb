@@ -27,3 +27,4 @@ config.gem 'rspec-rails', :lib => false,        :version => '>=1.2.7.1' unless F
 
 config.gem 'rspec', :lib => false, :version => '>= 1.2.9'
 config.gem 'rspec-rails', :lib => false, :version => '>= 1.2.9'
+config.gem 'fakeweb', :version => '>= 1.2.6'
