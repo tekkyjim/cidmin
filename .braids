@@ -1,0 +1,8 @@
+--- 
+vendor/plugins/blitz: 
+  squashed: true
+  url: git://github.com/dancroak/blitz.git
+  branch: master
+  type: git
+  revision: 06540fc05327564a799014ccec7bec71c7527d6a
+  remote: braid/vendor/plugins/blitz
