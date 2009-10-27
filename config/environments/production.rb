@@ -27,3 +27,11 @@ config.action_view.cache_template_loading            = true
 # Enable threaded mode
 # config.threadsafe!
 HOST = 'cidmin.com'
+config.action_mailer.smtp_settings = {
+  :address        => "smtp.gmail.com",
+  :port           => 587,
+  :domain         => "cid.cidmin.min@googlemail.com",
+  :authentication => :plain,
+  :user_name      => "cid.cidmin.min@googlemail.com",
+  :password       => "cidminmincid" 
+}
