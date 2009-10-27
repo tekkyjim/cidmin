@@ -14,6 +14,7 @@ Rails::Initializer.run do |config|
   config.gem 'ambethia-smtp-tls', :lib => 'smtp-tls', :source => 'http://gems.github.com', :version => '>= 1.1.2'
   config.gem 'thoughtbot-paperclip', :lib => 'paperclip', :source => 'http://gems.github.com', :version => '>= 2.3.1'
   config.gem 'thoughtbot-factory_girl', :lib => 'factory_girl', :source => 'http://gems.github.com', :version => '>= 1.2.2'
+  config.gem 'formtastic', :source => 'http://gemcutter.org'
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.
