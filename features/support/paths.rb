@@ -1,6 +1,9 @@
 module NavigationHelpers
   def path_to(page_name)
     case page_name
+
+    when /the new character page/i
+      new_character_path
     
     when /the homepage/i
       root_path

@@ -7,3 +7,4 @@ coverage
 public/system/**/*
 public/stylesheets/all.css
 public/javascripts/all.js
+.idea/
