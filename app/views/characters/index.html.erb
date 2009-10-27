@@ -1,0 +1,7 @@
+<h1>Characters</h1>
+
+<ul>
+  <% @characters.each do |character| -%>
+    <li><%= link_to character.name.to_s, character_path(character) %></li>
+  <% end -%>
+</ul>

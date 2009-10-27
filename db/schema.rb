@@ -9,7 +9,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091027152641) do
+ActiveRecord::Schema.define(:version => 20091027224332) do
+
+  create_table "characters", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "city_id"
+    t.string   "name"
+    t.integer  "xp"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email"
@@ -22,8 +30,8 @@ ActiveRecord::Schema.define(:version => 20091027152641) do
     t.datetime "updated_at"
   end
 
+  add_index "users", ["confirmation_token", "id"], :name => "index_users_on_id_and_confirmation_token"
   add_index "users", ["email"], :name => "index_users_on_email"
-  add_index "users", ["id", "confirmation_token"], :name => "index_users_on_id_and_confirmation_token"
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
 
 end
