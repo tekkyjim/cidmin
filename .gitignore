@@ -1,0 +1,9 @@
+.DS_Store
+log/*.log
+tmp/*
+tmp/**/*
+db/*.sqlite3
+coverage
+public/system/**/*
+public/stylesheets/all.css
+public/javascripts/all.js
