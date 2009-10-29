@@ -18,6 +18,8 @@ Rails::Initializer.run do |config|
   config.gem "acl9", :source => "http://gemcutter.org", :lib => "acl9"
   config.gem  "inherited_resources", :source => "http://gemcutter.org"
   config.gem 'validatious-on-rails', :source => 'http://gemcutter.org'
+  config.gem 'rubymood-jintastic', :lib => 'jintastic'
+  
   
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
