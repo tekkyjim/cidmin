@@ -6,5 +6,8 @@ Feature: Characters
     When I fill in "name" with "Bob"
     And I select "Darlington" from "City"
     And I press "Create"
-    Then I should see "Bob"
+    Then I should see "Character was successfully created"
+    And I should see "Bob"
     And I should see "Darlington"
+
+    
