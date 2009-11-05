@@ -1,4 +1,14 @@
-%li
-  =@character.name
-  From
-  =@character.city.name
+%p
+  %li
+    =@character.name
+    From
+    =@character.city.name
+-unless @character.user.nil?
+  -unless @character.user.name.blank?
+    %p
+      Created by
+      =@character.user.name
+-unless @character.xp.nil?
+  %p
+    Current XP
+    =@character.xp.to_s
