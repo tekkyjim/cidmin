@@ -1,0 +1,15 @@
+%h1
+  Users
+%ul
+  - @users.each do |user|
+    %li
+      %strong
+        - if user.name.blank?
+          = link_to user.email, user_path(user)
+        - else
+          =link_to user.name, user_path(user)
+
+        -unless user.phonenum.blank?
+          =user.phonenum
+      =link_to "Edit", edit_user_path(user)
+      = link_to "Destroy", user, :confirm => 'Are you sure?', :method => :delete

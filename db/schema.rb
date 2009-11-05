@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091028231302) do
+ActiveRecord::Schema.define(:version => 20091105190915) do
 
   create_table "characters", :force => true do |t|
     t.datetime "created_at"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(:version => 20091028231302) do
     t.boolean  "email_confirmed",                   :default => false, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "phonenum"
+    t.string   "name"
   end
 
   add_index "users", ["confirmation_token", "id"], :name => "index_users_on_id_and_confirmation_token"
