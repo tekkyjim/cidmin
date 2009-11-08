@@ -10,3 +10,17 @@
   %p
     Email:
     =@user.email
+
+-unless @user.transactions.nil?
+  -@vals = @user.transactions.find(:all, :order => "created_at DESC", :limit => 5)
+  %p 
+    Last
+    =@vals.count
+    Transactions
+    -for val in @vals
+      %li    
+        =val.amount.to_s
+        Awarded on
+        =val.updated_at.strftime("%D")
+        To 
+        =val.character.name

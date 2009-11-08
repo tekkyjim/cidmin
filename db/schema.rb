@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091105202234) do
+ActiveRecord::Schema.define(:version => 20091108215442) do
 
   create_table "characters", :force => true do |t|
     t.datetime "created_at"
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(:version => 20091105202234) do
 
   create_table "cities", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "transactions", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "character_id"
+    t.integer  "amount"
+    t.string   "reason",       :default => ""
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -42,5 +51,17 @@ ActiveRecord::Schema.define(:version => 20091105202234) do
   add_index "users", ["confirmation_token", "id"], :name => "index_users_on_id_and_confirmation_token"
   add_index "users", ["email"], :name => "index_users_on_email"
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
+
+  create_table "versions", :force => true do |t|
+    t.integer  "versioned_id"
+    t.string   "versioned_type"
+    t.text     "changes"
+    t.integer  "number"
+    t.datetime "created_at"
+  end
+
+  add_index "versions", ["created_at"], :name => "index_versions_on_created_at"
+  add_index "versions", ["number"], :name => "index_versions_on_number"
+  add_index "versions", ["versioned_type", "versioned_id"], :name => "index_versions_on_versioned_type_and_versioned_id"
 
 end
