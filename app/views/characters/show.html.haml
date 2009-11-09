@@ -12,7 +12,7 @@
   %p
     Current XP
     =@character.xp.to_s
--unless @character.transactions.blank?
+-unless @character.transactions.nil?
   -@vals = @character.transactions.find(:all, :order => "created_at DESC", :limit => 5)
   %p 
     Last
@@ -21,7 +21,7 @@
     -for val in @vals
       %li    
         =val.amount.to_s
-        Awarded on
+        xp, Awarded on
         =val.updated_at.strftime("%D")
         For "
         =val.reason
