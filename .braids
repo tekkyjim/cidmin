@@ -1,4 +1,11 @@
 --- 
+vendor/plugins/hoptoad_notifier: 
+  squashed: true
+  url: git://github.com/thoughtbot/hoptoad_notifier.git
+  branch: master
+  type: git
+  revision: ed12d59a194b8c64e3f530e3b6ede5b1978335ee
+  remote: braid/vendor/plugins/hoptoad-notifier
 vendor/plugins/blitz: 
   squashed: true
   url: git://github.com/negonicrac/blitz.git
