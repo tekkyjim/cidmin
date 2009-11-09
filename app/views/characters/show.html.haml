@@ -12,7 +12,7 @@
   %p
     Current XP
     =@character.xp.to_s
--unless @character.transactions.nil?
+-unless @character.transactions.blank?
   -@vals = @character.transactions.find(:all, :order => "created_at DESC", :limit => 5)
   %p 
     Last
