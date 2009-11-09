@@ -16,7 +16,7 @@
   -@vals = @character.transactions.find(:all, :order => "created_at DESC", :limit => 5)
   %p 
     Last
-    =@vals.count
+    =@vals.size
     Transactions
     -for val in @vals
       %li    
