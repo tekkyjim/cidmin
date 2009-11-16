@@ -20,7 +20,7 @@
       =link_to "Transactions", transactions_path
       -unless current_user.nil?
         Logged in as
-        -if current_user.name.blank?
+        -if current_user.name.nil? || current_user.name.blank?
           =current_user.email
         -else
           =current_user.name
