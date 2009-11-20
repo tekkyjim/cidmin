@@ -10,7 +10,7 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
   config.gem 'clearance', :lib => 'clearance', :source => 'http://gems.github.com', :version => '>= 0.8.3'
-  config.gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.github.com', :version => '>= 2.3.11'
+  config.gem 'will_paginate', :lib => 'will_paginate', :source => 'http://gemcutter.org', :version => '>= 2.3.11'
   config.gem 'ambethia-smtp-tls', :lib => 'smtp-tls', :source => 'http://gems.github.com', :version => '>= 1.1.2'
   config.gem 'paperclip', :lib => 'paperclip', :source => 'http://gemcutter.org', :version => '>= 2.3.1'
   config.gem 'factory_girl', :lib => 'factory_girl', :source => 'http://gemcutter.org', :version => '>= 1.2.2'
@@ -18,7 +18,9 @@ Rails::Initializer.run do |config|
   config.gem "acl9", :source => "http://gemcutter.org", :lib => "acl9"
   config.gem  "inherited_resources", :source => "http://gemcutter.org"
   config.gem 'validatious-on-rails', :source => 'http://gemcutter.org'
-  #config.gem 'rubymood-jintastic', :lib => 'jintastic'
+  config.gem "declarative_authorization", :source => "http://gemcutter.org"
+
+  
   
   
   # Settings in config/environments/* take precedence over those specified here.

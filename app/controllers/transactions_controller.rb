@@ -1,4 +1,5 @@
 class TransactionsController < ApplicationController
+  filter_resource_access
   def index
     @transactions = Transaction.all
   end
