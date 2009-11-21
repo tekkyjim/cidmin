@@ -14,21 +14,25 @@
   
   %body
     #container
-      -if permitted_to? :index, :users
-        =link_to "Users", users_path
-      -if permitted_to? :index, :characters
-        =link_to "Characters", characters_path
-      -if permitted_to? :index, :cities       
-        =link_to "Cities", cities_path
-      -if permitted_to? :index, :transactions       
-        =link_to "Transactions", transactions_path
-      -unless current_user.nil?
-        Logged in as
-        -if current_user.name.nil? || current_user.name.blank?
-          =link_to current_user.email, current_user
-        -else
-          =link_to current_user.name, current_user
-        =link_to 'Sign out', sign_out_path
+      #menu
+        -if permitted_to? :index, :users
+          =link_to "Users", users_path
+        -if permitted_to? :index, :characters
+          =link_to "Characters", characters_path
+        -if permitted_to? :index, :cities       
+          =link_to "Cities", cities_path
+        -if permitted_to? :index, :transactions       
+          =link_to "Transactions", transactions_path
+        #login
+          -if current_user != nil
+            Logged in as
+            -if current_user.name.nil? || current_user.name.blank?
+              =link_to current_user.email, current_user
+            -else
+              =link_to current_user.name, current_user
+            =link_to 'Sign out', sign_out_path
+          -else
+            =link_to 'Sign in', sign_in_path
       -flash.each do |name, msg|
         =content_tag :div, msg, :id => "flash_#{name}"
       

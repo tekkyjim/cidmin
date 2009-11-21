@@ -1,10 +1,7 @@
 -semantic_form_for @user do |f|
   =f.input :name
-  =f.input :phonenum, :label => "Phone Number"
-
-
-  -for role in Role.all
-    =check_box_tag "user[role_ids][]", role.id, @user.roles.include?(role)
-    =h role.name 
- 
+  =f.input :phonenum, :label => "Phone Number", :input_html => {:size => 13}
+  %li 
+    Role
+    =collection_select :user, :role_ids, Role.find(:all, :order => 'name ASC'), :id, :name, { :selected => @user.role_ids }, {:name => 'user[role_ids][]' }
   =f.commit_button

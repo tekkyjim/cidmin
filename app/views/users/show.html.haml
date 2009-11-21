@@ -1,31 +1,37 @@
-%li
-  %p
-    Name:
-    =@user.name
-%li
-  %p
-    Phone Number:
-    =@user.phonenum
-%li
-  %p
-    Email:
-    =@user.email
-  -unless @user.roles.blank?
-    -for role in @user.roles
-      %p
-        Role:
-        =role.name
+%p
+  Name:
+  =@user.name
+%p
+  Phone Number:
+  =@user.phonenum
+%p
+  Email:
+  =@user.email
+-unless @user.roles.blank?
+  -for role in @user.roles
+    %p
+      Role:
+      =role.name
 -if permitted_to? :edit, @user
   =link_to "Edit Details", edit_user_path
--unless @user.transactions.blank?
-  -@vals = @user.transactions.find(:all, :order => "created_at DESC", :limit => 5)
-  %p 
-    Last
-    =@vals.size
-    Transactions
-    -for val in @vals
-      %li    
-        =val.amount.to_s
-        Awarded on
-        =val.updated_at.strftime("%D")
-        =val.character.name
+-unless @user.characters.blank?
+  -@chars = @user.characters.find(:all)
+  %p
+    =pluralize(@chars.size, 'Character')
+    -for char in @chars    
+      %p     
+        =link_to char.name, character_path(char)
+-if permitted_to? :create, Transaction.new               
+  -unless @user.transactions.blank?
+    -@vals = @user.transactions.find(:all, :order => "created_at DESC", :limit => 5)
+    %p 
+      Last
+      =@vals.size
+      Transactions
+      -for val in @vals
+        %li    
+          =val.amount.to_s
+          Awarded to
+          =val.character.name
+          on
+          =val.updated_at.strftime("%D")     
