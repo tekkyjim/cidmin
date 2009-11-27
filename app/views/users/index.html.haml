@@ -1,15 +1,24 @@
-%h1
-  Users
-%ul
+-title "Users"
+%table
+  %tr
+    %th Username
+    %th Phone Number
+    %th Email Address
   -for user in @users
-    %li
-      %strong
-        - if user.name.blank?
+    %tr
+      %td
+        -if user.name.blank?
           = link_to user.email, user_path(user)
-        - else
+        -else
           =link_to user.name, user_path(user)
-
+      %td
         -unless user.phonenum.blank?
           =user.phonenum
-      =link_to "Edit", edit_user_path(user)
-      = link_to "Destroy", user, :confirm => 'Are you sure?', :method => :delete
+      %td
+        =user.email
+      %td
+        =link_to "Show", user 
+      %td
+        =link_to "Edit", edit_user_path(user) 
+      %td
+        =link_to "Destroy", user, :confirm => 'Are you sure?', :method => :delete 

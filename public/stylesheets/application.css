@@ -21,3 +21,16 @@ a img { border: none; }
 #errorExplanation ul { margin: 2px 24px; }
 #errorExplanation ul li { font-size: 12px; list-style: disc; }
 #login { display: inline; float: right;}
+ul{
+    margin: 0 auto;
+    padding: 0;
+}
+ul.horizontal_list li{
+    text-align: left;
+    float: left;
+    list-style: none;
+    padding: 3px 10px 3px 10px;
+    margin: 5px;
+    border: 1px solid #CCC;
+}
+#content { margin: 0 auto; padding: 0;}
