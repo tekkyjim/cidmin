@@ -1,6 +1,6 @@
 class AddRoleToUsers < ActiveRecord::Migration
   def self.up
-    add_column :users, :role, :string, :default => "player"
+    add_column :users, :role, :string, :default => "player", :force => true
     add_column :users, :city_id, :integer
   end
 

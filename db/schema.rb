@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(:version => 20091127133917) do
     t.datetime "updated_at"
     t.string   "phonenum"
     t.string   "name"
-    t.string   "role",                              :default => "Player"
+    t.string   "role",                              :default => "player"
     t.integer  "city_id"
   end
 
