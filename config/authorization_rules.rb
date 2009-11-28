@@ -15,7 +15,7 @@ authorization do
       has_permission_on :users, :to => [:edit, :update, :show] do
         if_attribute :email => is { user.email }
       end
-      has_permission_on :characters, :to => [:create, :new]
+      has_permission_on :characters, :to => [:create, :new, :index]
       has_permission_on :characters, :to => [:edit, :update, :show] do
         if_attribute :user_id => is { user.id }
       end
