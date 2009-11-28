@@ -2,6 +2,6 @@
   =f.input :name
   =f.input :phonenum, :label => "Phone Number", :input_html => {:size => 13}
   %li 
-    Role
-    =collection_select :user, :role_ids, Role.find(:all, :order => 'name ASC'), :id, :name, { :selected => @user.role_ids }, {:name => 'user[role_ids][]' }
+    =f.label :role
+    =f.collection_select :role, User::ROLES, :to_s, :titleize
   =f.commit_button

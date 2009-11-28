@@ -1,7 +1,6 @@
 Feature: Sign up
   In order to get access to protected sections of the site
-  A user
-  Should be able to sign up
+  A user Should be able to sign up
 
     Scenario: User signs up with invalid data
       When I go to the sign up page
@@ -17,7 +16,7 @@ Feature: Sign up
       And I fill in "Password" with "password"
       And I fill in "Confirm password" with "password"
       And I press "Sign Up"
-      Then I should see "You will receive an email within the next few minutes. It contains instructions for confirming your account."
+      Then I should see "You will receive an email within the next few minutes"
       And a confirmation message should be sent to "email@person.com"
 
     Scenario: User confirms his account

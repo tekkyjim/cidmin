@@ -7,12 +7,13 @@
 %p
   Email:
   =@user.email
--unless @user.roles.blank?
-  -for role in @user.roles
-    %p
-      Role:
-      =role.name
+%p
+  Role:
+  =@user.role.titleize
 -if permitted_to? :edit, @user
+  -if @user.name.blank? || @user.phonenum.blank?
+    #errorExplanation
+      Please complete your details using the link below.
   =link_to "Edit Details", edit_user_path
 -unless @user.characters.blank?
   -@chars = @user.characters.find(:all)

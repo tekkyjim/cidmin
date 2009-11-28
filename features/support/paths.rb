@@ -18,7 +18,8 @@ module NavigationHelpers
           new_session_path
         when /the password reset request page/i
           new_password_path
-    
+        when /^the "(.*)" user page$/i
+         user_path(User.find_by_email($1))
     when /the home\s?page/
       '/'
     

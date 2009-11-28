@@ -4,8 +4,8 @@ Feature: Manage experience
   I want to be able to get lists of xp awards as well as amend them.
  @wip
   Scenario:  Award Xp
-    Given that a character called "Bob" exists
-    And that a character called "Harry" exists
-    And that I am logged in as an admin
+    Given a character exists with a name of "Bob"
+    And a character exists with a name of "Harry"
+    And I am logged in as an admin with the email "test@admin.com"
 
 

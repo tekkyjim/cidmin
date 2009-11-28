@@ -9,14 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091119173233) do
-
-  create_table "assignments", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "role_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(:version => 20091127133917) do
 
   create_table "characters", :force => true do |t|
     t.datetime "created_at"
@@ -28,12 +21,6 @@ ActiveRecord::Schema.define(:version => 20091119173233) do
   end
 
   create_table "cities", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "roles", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -54,11 +41,13 @@ ActiveRecord::Schema.define(:version => 20091119173233) do
     t.string   "salt",               :limit => 128
     t.string   "confirmation_token", :limit => 128
     t.string   "remember_token",     :limit => 128
-    t.boolean  "email_confirmed",                   :default => false, :null => false
+    t.boolean  "email_confirmed",                   :default => false,    :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "phonenum"
     t.string   "name"
+    t.string   "role",                              :default => "Player"
+    t.integer  "city_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"
