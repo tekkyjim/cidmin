@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   has_many :transactions
   belongs_to :city 
 
-  ROLES = %w[admin support player]
+  ROLES = %w[admin player]
 
     def role_symbols
       [role.to_sym]

@@ -3,5 +3,12 @@
   =f.input :phonenum, :label => "Phone Number", :input_html => {:size => 13}
   %li 
     =f.label :role
-    =f.collection_select :role, User::ROLES, :to_s, :titleize
+    - group = []
+    -for city in City.all
+      -temp = "support_"+city.name
+      -group= group + temp.downcase.to_a
+    -rolelist = group + User::ROLES 
+    =f.collection_select :role, rolelist.sort, :to_s, :titleize
   =f.commit_button
+
+

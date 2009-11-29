@@ -1,0 +1,32 @@
+-title "Transactions"
+%table
+  %tr
+    %th
+      Awarded By
+    %th
+      Character
+    %th
+      Amount
+    %th
+      Reason
+  -for transaction in @transactions
+    %tr
+      %td
+        -if transaction.user.name.blank?
+          =h transaction.user.email
+        -else
+          =h transaction.user.name
+      %td
+        =h transaction.character.name
+      %td
+        =h transaction.amount
+      %td
+        =h transaction.reason
+      %td
+        = link_to "Show", transaction
+      %td
+        = link_to "Edit", edit_transaction_path(transaction) 
+      %td
+        = link_to "Destroy", transaction, :confirm => 'Are you sure?', :method => :delete 
+%p
+  = link_to "New Transaction", new_transaction_path 
