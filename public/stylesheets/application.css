@@ -1,4 +1,4 @@
-body { background-color: #666666; font-family: Verdana, Helvetica, Arial; font-size: 14px; }
+body { background-color: Maroon; font-family: cursive, Helvetica, Arial; font-size: 14px; }
 
 a { color: #0000FF; }
 a img { border: none; }
@@ -20,6 +20,7 @@ a img { border: none; }
 #errorExplanation p { color: #333; margin-bottom: 0; padding: 8px; }
 #errorExplanation ul { margin: 2px 24px; }
 #errorExplanation ul li { font-size: 12px; list-style: disc; }
+#menu { font-size: 18px;}
 #login { display: inline; float: right;}
 ul{
     margin: 0 auto;
