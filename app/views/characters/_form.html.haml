@@ -1,6 +1,6 @@
 =f.input :name
 =f.input :city, :include_blank => false
--if current_user.role = "admin"
+-if current_user.role == "admin"
   =f.input :user
 -else
   =f.input :user_id, :as => :hidden, :value=> current_user.id
