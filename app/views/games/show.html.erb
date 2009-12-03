@@ -1,0 +1,22 @@
+<% title "Game" %>
+
+<p>
+  <strong>Date:</strong>
+  <%=h @game.date %>
+</p>
+<p>
+  <strong>City:</strong>
+  <%=h @game.city_id %>
+</p>
+<p>
+  <strong>Users:</strong>
+  <% for user in @game.users %>
+  <%=h user.email %>
+  <% end %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_game_path(@game) %> |
+  <%= link_to "Destroy", @game, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", games_path %>
+</p>

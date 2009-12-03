@@ -1,0 +1,13 @@
+-title "Edit Transaction" 
+
+-semantic_form_for(@transaction, :html => {:class => 'validate'}) do |form|
+  -form.inputs do
+    = render :partial=>'form', :locals  =>  {:f =>  form} 
+  -form.buttons do
+    =form.commit_button 'Update',:button_html => { :disable_with => 'Please wait...' }
+
+
+
+=link_to "Show", @transaction
+=link_to "View All", transactions_path
+

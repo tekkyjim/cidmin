@@ -1,7 +1,8 @@
 %h1
   New character
--semantic_form_for(@character, :html => {:class => 'validate'}) do |form|
-  -form.inputs do
-    = render :partial=>'form', :locals  =>  {:f =>  form} 
-    -form.buttons do
-      = form.commit_button 'Create',:button_html => { :disable_with => 'Please wait...' } 
+%ul
+  -semantic_form_for(@character, :html => {:class => 'validate'}) do |form|
+    -form.inputs do
+      = render :partial=>'form', :locals  =>  {:f =>  form} 
+      -form.buttons do
+        = form.commit_button 'Create',:button_html => { :disable_with => 'Please wait...' } 
