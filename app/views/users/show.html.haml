@@ -22,6 +22,11 @@
     -for char in @chars    
       %p     
         =link_to char.name, character_path(char)
+-unless @user.city.blank?
+  Will you be attending the next
+  =@user.city.name
+  game?
+  
 -if permitted_to? :create, Transaction.new               
   -unless @user.transactions.blank?
     -@vals = @user.transactions.find(:all, :order => "created_at DESC", :limit => 5)

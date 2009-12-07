@@ -1,14 +1,16 @@
 -semantic_form_for @user do |f|
   =f.input :name
   =f.input :phonenum, :label => "Phone Number", :input_html => {:size => 13}
-  %li 
-    =f.label :role
-    - group = []
-    -for city in City.all
-      -temp = "support_"+city.name
-      -group= group + temp.downcase.to_a
-    -rolelist = group + User::ROLES 
-    =f.collection_select :role, rolelist.sort, :to_s, :titleize
+  =f.input :city
+  -if current_user.role == "admin"
+    %li 
+      =f.label :role
+      - group = []
+      -for city in City.all
+        -temp = "support_"+city.name
+        -group= group + temp.downcase.to_a
+      -rolelist = group + User::ROLES 
+      =f.collection_select :role, rolelist.sort, :to_s, :titleize
   =f.commit_button
 
 

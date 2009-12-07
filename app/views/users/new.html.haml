@@ -1,0 +1,6 @@
+%h2 Sign up
+
+-semantic_form_for @user do |form|
+  = render :partial => "inputs", :locals => { :form => form }
+  -form.buttons do
+    = form.commit_button "Sign up"
