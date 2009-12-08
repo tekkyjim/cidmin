@@ -4,8 +4,10 @@
   -@characters.each do |character|
     %li
       =link_to character.name, character_path(character)
-      =link_to "("+character.user.name+")", user_path(character.user) 
-      =link_to "Edit", edit_character_path(character)
-      =link_to "Destroy", character, :confirm => 'Are you sure?', :method => :delete
+      =link_to "("+character.user.name+")", user_path(character.user)
+      -if permitted_to? :edit, character  
+        =link_to "Edit", edit_character_path(character)
+      -if permitted_to? :destroy, character
+        =link_to "Destroy", character, :confirm => 'Are you sure?', :method => :delete
 %p
   =link_to "New Character", new_character_path

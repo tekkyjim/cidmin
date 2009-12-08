@@ -25,11 +25,8 @@ authorization do
     role ("support_" +city.name.downcase).to_sym do
         includes :player
         has_permission_on :transactions, :to => [:create, :new, :index, :show]
-        #has_permission_on :transactions, :to => [:edit, :update] do
-         # if_attribute :user_id => is {user.id}
-        #end
         has_permission_on :characters, :to => [:show, :index]
-        has_permission_on :characters, :to => [:edit, :update, :create, :new, :destroy] do
+        has_permission_on :characters, :to => [:edit, :update, :create, :new] do
           if_attribute :city_id => city.id
         end
       end
