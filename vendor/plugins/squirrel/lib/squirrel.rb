@@ -144,7 +144,7 @@ module Squirrel
         attr_reader :pages
         attr_reader :total_results
       end
-
+      conditions.delete(:order)   # i added this!!!!!!!
       total_results = model.count(conditions)
       set.instance_variable_set("@pages", 
                                 Paginator.new( :count => total_results, 
