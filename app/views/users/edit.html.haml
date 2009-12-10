@@ -9,6 +9,9 @@
       -for city in City.all
         -temp = "support_"+city.name
         -group= group + temp.downcase.to_a
+      -for city in City.all
+        -temp = "storyteller_"+city.name
+        -group = group + temp.downcase.to_a
       -rolelist = group + User::ROLES 
       =f.collection_select :role, rolelist.sort, :to_s, :titleize
   =f.commit_button

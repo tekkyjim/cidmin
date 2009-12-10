@@ -31,4 +31,14 @@ authorization do
         end
       end
     end
+  for city in City.all
+    role ("storyteller_" +city.name.downcase).to_sym do
+      includes :player
+      has_permission_on :transactions, :to => [:create, :new, :index, :show]
+      has_permission_on :characters, :to => [:show, :index]
+      has_permission_on :characters, :to => [:edit, :update, :create, :new] do
+        if_attribute :city_id => city.id
+      end
+    end
+  end
 end

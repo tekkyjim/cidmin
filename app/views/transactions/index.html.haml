@@ -1,5 +1,12 @@
+%script{ :type => "text/javascript" }
+  function handleSelection(id) {
+  alert('ID selected : ' + id);
+  }
+
 -title "Transactions"
-= jqgrid("Transactions", "transactions", "/transactions",[{ :field => "id", :label => "ID", :width => 35, :resizable => false },{ :field => "user.name", :label => "User" },{ :field => "character_id", :label => "Character" },{ :field => "amount", :label => "Amount" },{ :field => "reason", :label => "Reason" },{ :field => "formatted_created_at", :label => "Created At" }])
+=jqgrid("Transactions", "transactions", "/transactions",[{ :field => "id", :label => "ID", :width => 35, :resizable => false },{ :field => "user.name", :label => "User" },{ :field => "character_id", :label => "Character" },{ :field => "amount", :label => "Amount" },{ :field => "reason", :label => "Reason" },{ :field => "formatted_created_at", :label => "Created At" }],{:search => "false", :height => 300, :selection_handler => "handleSelection"})
 
 = link_to "New Transaction", new_transaction_path 
+%a#transactions_select_button{ :href => "#" }
+  Get ID of selected row
 
