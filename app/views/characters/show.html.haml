@@ -17,6 +17,13 @@
     -for value in @vals
       -total = value.amount + total
     =total
+  %p
+    Total XP
+    -totalxp = 0
+    -for value in @vals
+      -unless value.amount < 1
+        -totalxp = value.amount + totalxp
+    =totalxp
   %p 
     Last
     =@vals.size
