@@ -38,7 +38,7 @@ class TransactionsController < ApplicationController
     @transaction = Transaction.new(params[:transaction])
     if @transaction.save
       flash[:notice] = "Successfully created transaction."
-      redirect_to @transaction
+      redirect_to transactions_url
     else
       render :action => 'new'
     end

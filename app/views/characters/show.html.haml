@@ -8,7 +8,14 @@
     %p
       Created by
       =@character.user.name
-
+-if current_user.role == "admin" || current_user.role.include?("storyteller")
+  %p
+    %strong
+      ST notes:
+    =@character.stnote
+%p
+  Player Notes:
+  =@character.playernote
 -unless @character.transactions.nil?
   -@vals = @character.transactions.find(:all, :order => "created_at DESC")
   %p
@@ -21,7 +28,7 @@
     Total XP
     -totalxp = 0
     -for value in @vals
-      -unless value.amount < 1 && value.category != "Error"
+      -unless value.amount < 1 
         -totalxp = value.amount + totalxp
     =totalxp
   %p 
