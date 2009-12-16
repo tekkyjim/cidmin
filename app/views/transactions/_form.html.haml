@@ -1,4 +1,4 @@
-=f.input :character
+=f.input :character, :include_blank => true
 =f.input :category, :as => :select, :collection => ["Attendance","Downtime","Spend","Error","Other"], :value_method => :to_s
 =f.input :reason
 =f.input :amount
