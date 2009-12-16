@@ -37,7 +37,8 @@ class TransactionsController < ApplicationController
   def create
     @transaction = Transaction.new(params[:transaction])
     if @transaction.save
-      flash[:notice] = "Successfully created transaction."
+      transnum = @transaction.id.-1
+      flash[:notice] = "Successfully created, this will be editable for one month by visiting " + request.request_uri + "/" + @transaction.id.to_s + "/edit"
       redirect_to transactions_url
     else
       render :action => 'new'
