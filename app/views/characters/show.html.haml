@@ -21,7 +21,7 @@
     Total XP
     -totalxp = 0
     -for value in @vals
-      -unless value.amount < 1
+      -unless value.amount < 1 && value.category != "Error"
         -totalxp = value.amount + totalxp
     =totalxp
   %p 

@@ -1,4 +1,5 @@
 =f.input :character
+=f.input :category, :as => :select, :collection => ["Attendance","Downtime","Spend","Error","Other"], :value_method => :to_s
 =f.input :reason
 =f.input :amount
 -if current_user.role == "admin"

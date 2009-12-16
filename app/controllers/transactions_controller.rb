@@ -9,7 +9,8 @@ class TransactionsController < ApplicationController
       if params[:_search] == "true"
         user_id        =~ "%#{params[:user_id]}%" if params[:user_id].present?
         character_id   =~ "%#{params[:character_id]}%" if params[:character_id].present?
-        amount         =~ "%#{params[:amount]}%" if params[:amount].present?                
+        amount         =~ "%#{params[:amount]}%" if params[:amount].present?
+        category       =~ "%#{params[:category]}%" if params[:category].present?                
         reason         =~ "%#{params[:reason]}%" if params[:reason].present?
         created_at     =~ "%#{params[:created_at]}%" if params[:created_at].present?        
       end
@@ -19,7 +20,7 @@ class TransactionsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json { render :json => transactions.to_jqgrid_json([:id,"user.name","character.name",:amount,:reason,"created_at.to_s"], 
+      format.json { render :json => transactions.to_jqgrid_json([:id,"user.name","character.name",:amount,:category,:reason,"created_at.to_s"], 
                                                          params[:page], params[:rows], transactions.total_entries) }
     end
   end

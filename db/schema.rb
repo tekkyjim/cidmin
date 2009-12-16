@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20091130003204) do
     t.string   "reason",       :default => ""
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "category",     :default => "Other"
   end
 
   create_table "users", :force => true do |t|
@@ -59,8 +60,8 @@ ActiveRecord::Schema.define(:version => 20091130003204) do
     t.integer  "game_id"
   end
 
+  add_index "users", ["confirmation_token", "id"], :name => "index_users_on_id_and_confirmation_token"
   add_index "users", ["email"], :name => "index_users_on_email"
-  add_index "users", ["id", "confirmation_token"], :name => "index_users_on_id_and_confirmation_token"
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
 
 end
